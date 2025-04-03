@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FAQs } from './HomeJson';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import Button from '../../utils/Button';
 import Avatar2 from '../../assets/images/Avatar2.png';
@@ -10,6 +9,7 @@ import IsInView from '../../utils/IsInView';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { FAQs } from '../../lib/HomeJson';
 
 const Faq = () => {
   const [collapAnsewr, setCollapAnsewr] = useState([]);

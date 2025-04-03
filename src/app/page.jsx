@@ -1,8 +1,9 @@
-'use client';
-import Container from '../components/Container/Container'
-import { useEffect, useRef } from "react";
-import { useSearchParams } from 'next/navigation';
-import HeroSection from '../pages/Home/HeroSection'
+"use client";
+
+import { Suspense, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
+import Container from "../components/Container/Container";
+import HeroSection from "../pages/Home/HeroSection";
 import About from "../pages/Home/About";
 import Features from "../pages/Home/Features";
 import Benefits from "../pages/Home/Benefits";
@@ -16,7 +17,7 @@ import Nexaltors from "../pages/Home/Nexaltors";
 import Info from "../pages/Home/Info";
 import Faq from "../pages/Home/Faq";
 import OurProducts from "../pages/Home/OurProducts";
-import Insurance from '../pages/Home/Insurance ';
+import Insurance from "../pages/Home/Insurance";
 
 export default function Home() {
   const featureRef = useRef(null);
@@ -27,65 +28,6 @@ export default function Home() {
   const bolkaRef = useRef(null);
   const salebuddyRef = useRef(null);
   const insuranceRef = useRef(null);
-
-  const searchParams = useSearchParams();
-  const state = searchParams?.get('section');
-
-
-  const handleSalebuddyView = () => {
-    salebuddyRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-  const handleInsuranceView = () => {
-    insuranceRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-  const handleAgenticAiView = () => {
-    agenticAiRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-  const handleBolkaView = () => {
-    bolkaRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-  const handleFreatureView = () => {
-    featureRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleProductView = () => {
-    productRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleYesQLView = () => {
-    yesQLRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleApplicationView = () => {
-    applicationRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  useEffect(() => {
-    if (!state) return;
-
-    switch (state) {
-      case "features":
-        handleFreatureView();
-        break;
-      case "product":
-        handleProductView();
-        break;
-      case "yesql":
-        handleYesQLView();
-        break;
-      case "application":
-        handleApplicationView();
-        break;
-      case "agenticai":
-        handleAgenticAiView();
-        break;
-      case "bolka":
-        handleBolkaView();
-        break;
-      case "salesbuddy":
-        handleSalebuddyView();
-        break;
-      case "insurance":
-        handleInsuranceView();
-        break;
-    }
-  }, [state]);
 
   return (
     <div className="flex justify-center items-center flex-col font-inter">
@@ -101,16 +43,59 @@ export default function Home() {
           <AgenticAI agenticAiRef={agenticAiRef} />
           <BolkaInfo bolkaRef={bolkaRef} />
           <Salesbuddy salebuddyRef={salebuddyRef} />
-
           <Insurance insuranceRef={insuranceRef} />
-
-
           <Nexaltors applicationRef={applicationRef} />
           <Info />
           <Faq />
           <OurProducts />
+          {/* Suspense Wrapper */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <ScrollHandler
+              featureRef={featureRef}
+              productRef={productRef}
+              yesQLRef={yesQLRef}
+              applicationRef={applicationRef}
+              agenticAiRef={agenticAiRef}
+              bolkaRef={bolkaRef}
+              salebuddyRef={salebuddyRef}
+              insuranceRef={insuranceRef}
+            />
+          </Suspense>
         </div>
       </Container>
     </div>
   );
+}
+
+function ScrollHandler({
+  featureRef,
+  productRef,
+  yesQLRef,
+  applicationRef,
+  agenticAiRef,
+  bolkaRef,
+  salebuddyRef,
+  insuranceRef,
+}) {
+  const searchParams = useSearchParams();
+  const state = searchParams?.get("section");
+
+  useEffect(() => {
+    if (!state) return;
+
+    const scrollToSection = {
+      features: featureRef,
+      product: productRef,
+      yesql: yesQLRef,
+      application: applicationRef,
+      agenticai: agenticAiRef,
+      bolka: bolkaRef,
+      salesbuddy: salebuddyRef,
+      insurance: insuranceRef,
+    }[state];
+
+    scrollToSection?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [state, featureRef, productRef, yesQLRef, applicationRef, agenticAiRef, bolkaRef, salebuddyRef, insuranceRef]);
+
+  return null;
 }

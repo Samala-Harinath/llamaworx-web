@@ -1,10 +1,10 @@
-import headerImg1 from '../../assets/images/headerImg1.png';
-import headerImg2 from '../../assets/images/headerImg2.png';
-import headerImg3 from '../../assets/images/headerImg3.png';
-import filterFunnel from '../../assets/svg/filter-funnel.svg';
-import checkVerified from '../../assets/svg/check-verified.svg';
-import translate from '../../assets/svg/translate.svg';
-import clipboardMinus from '../../assets/svg/clipboard-minus.svg';
+import headerImg1 from '../assets/images/headerImg1.png';
+import headerImg2 from '../assets/images/headerImg2.png';
+import headerImg3 from '../assets/images/headerImg3.png';
+import filterFunnel from '../assets/svg/filter-funnel.svg';
+import checkVerified from '../assets/svg/check-verified.svg';
+import translate from '../assets/svg/translate.svg';
+import clipboardMinus from '../assets/svg/clipboard-minus.svg';
 
 const blueGradient = `bg-gradient-to-b from-[#43CBFF] to-[#1440E1] bg-clip-text text-transparent font-bold`;
 

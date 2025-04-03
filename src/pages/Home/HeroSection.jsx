@@ -8,12 +8,12 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dot from '../../assets/images/_Dot.png';
 import Button from '../../utils/Button';
-import { slides } from './HomeJson';
 import { GoArrowRight } from 'react-icons/go';
 import { TbArrowDownRight } from 'react-icons/tb';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { slides } from '../../lib/HomeJson';
 
 const HeroSection = () => {
   const swiperRefLocal = useRef(null);

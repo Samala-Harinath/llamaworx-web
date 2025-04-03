@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
-import { BenefitsSestion } from './HomeJson';
 import benifitsImages1 from '../../assets/images/benifitsImages1.png';
 import benifitsImages2 from '../../assets/images/benifitsImages2.png';
 import benifitsImages3 from '../../assets/images/benifitsImages3.png';
@@ -9,6 +8,8 @@ import benifitsImages4 from '../../assets/images/benifitsImages4.png';
 import { motion } from 'framer-motion';
 import IsInView from '../../utils/IsInView';
 import Image from 'next/image';
+import { BenefitsSestion } from '../../lib/HomeJson';
+
 const Benefits = () => {
   const [benifitsIdx, setBenifitsIdx] = useState(0)
   const [GraditentBorder, setGraditentBorder] = useState("bg-gradient-to-r pt-1 from-[#4DEF8E] to-[#FFEB3A]")

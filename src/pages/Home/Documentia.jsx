@@ -1,6 +1,5 @@
 'use client';
 import React from 'react'
-import { documentiaSection } from './HomeJson';
 import { GoArrowUpRight } from 'react-icons/go';
 import { TbArrowDownRight } from 'react-icons/tb';
 import Button from '../../utils/Button';
@@ -9,6 +8,7 @@ import { motion } from 'framer-motion';
 import IsInView from '../../utils/IsInView';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useRouter } from 'next/navigation';
+import { documentiaSection } from '../../lib/HomeJson';
 
 const Documentia = ({ productRef }) => {
   const { trackEvent } = useMatomo();

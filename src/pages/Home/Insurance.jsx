@@ -1,13 +1,13 @@
 'use client';
 import React from 'react'
 import { motion } from 'framer-motion'
-import { InsuranceSection } from './HomeJson';
 import { GoArrowUpRight } from 'react-icons/go';
 import { TbArrowDownRight } from 'react-icons/tb';
 import Button from '../../utils/Button';
 import IsInView from '../../utils/IsInView';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useRouter } from 'next/navigation';
+import { InsuranceSection } from '../../lib/HomeJson';
 
 const Insurance = ({ insuranceRef }) => {
   const router =useRouter();

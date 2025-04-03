@@ -2,12 +2,12 @@
 import React from 'react'
 import { GoArrowUpRight } from 'react-icons/go';
 import { TbArrowDownRight } from 'react-icons/tb';
-import { nexaltorsSection } from './HomeJson';
 import Button from '../../utils/Button';
 import { motion } from 'framer-motion';
 import IsInView from '../../utils/IsInView';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useRouter } from 'next/navigation';
+import { nexaltorsSection } from '../../lib/HomeJson';
 
 const Nexaltors =({ applicationRef })=> {
   const router =useRouter();

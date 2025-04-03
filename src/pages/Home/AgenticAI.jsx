@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AgenticAISection } from './HomeJson';
 import { GoArrowUpRight } from 'react-icons/go'; 
 import { TbArrowDownRight } from 'react-icons/tb';
 import Button from '../../utils/Button';
 import IsInView from '../../utils/IsInView';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useRouter } from 'next/navigation';
+import { AgenticAISection } from '../../lib/HomeJson';
 
 const AgenticAI = ({ agenticAiRef }) => {
   const router =useRouter();
