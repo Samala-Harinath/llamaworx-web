@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #09090B;
+  --foreground: #F5F5F6;
+}
+
+@theme inline {
+  --color-primary: #F5F5F6;
+  --color-secondary: #CECFD2;
+  --color-tertiary: #94969C;
+
+  --color-bg-primary: #09090B;
+  --color-bg-secondary: #191C1C;
+  --color-bg-quaternary: #141414;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* font-family: "Inter", "sans-serif"; */
+}
+
+.swiper {
+  width: 100%;
+  max-width: 90vw; 
+  height: auto;
+  /* overflow: visible !important; */
+}
+
+.swiper-slide {
+  font-size: 18px;
+  width: 100% !important;
+  height: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  border-radius: 20px;
+  background-color: #2970FF;
+
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background: #2970FF !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  width: 100% !important;
+}
+
