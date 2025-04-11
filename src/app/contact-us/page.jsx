@@ -15,8 +15,8 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-    
   } = useForm();
 
 
@@ -27,6 +27,7 @@ const ContactUs = () => {
     await axios.post(url).then((res) => {
       console.log("res", res);
       if (res.data.success) {
+        reset();
         toast.success('Mail sent Successfully!');
       }
     })

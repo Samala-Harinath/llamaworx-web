@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -51,22 +51,9 @@ const HeroSection = () => {
     window.open(url, '_blank');
   };
 
-  // const swiperRef = useRef<any>(null); 
-  // useEffect(() => {
-  //   if (swiperRef.current && swiperRef.current.swiper) {
-  //     console.log('Swiper initialized successfully');
-  //   } else {
-  //     console.log('Swiper failed to initialize');
-  //   }
-  // }, []);
-
   return (
 
-    <div
-      className="flex flex-col items-center md:gap-10 mt-24  w-full"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="flex flex-col items-center md:gap-10 mt-24 w-full" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={30}
@@ -78,7 +65,6 @@ const HeroSection = () => {
         pagination={{ clickable: true }}
         navigation
         className="mySwiper w-full sm:max-w-full h-[500px]"
-
       >
         {slides.map(({ gradient, title, description, id, image }, index) => (
           <SwiperSlide key={index}>

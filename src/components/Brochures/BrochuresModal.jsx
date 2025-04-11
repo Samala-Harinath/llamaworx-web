@@ -49,6 +49,16 @@ const BrochuresModal = () => {
     setSuccess(false);
   };
 
+
+  const inputStyle = `border w-full py-[10px] px-[14px] rounded-xl  outline-none mt-1 bg-[#0C111D] border-[#333741]
+  text-[#f5f5f6]
+  placeholder:text-[#8B8E94]
+  autofill:bg-[#0C111D]
+  autofill:shadow-[inset_0_0_0px_1000px_#0C111D]
+  [-webkit-text-fill-color:#f5f5f6]
+  [&:-webkit-autofill]:[-webkit-text-fill-color:#f5f5f6]
+  [&::placeholder]:[-webkit-text-fill-color:#8B8E94]
+  transition-[background-color,color] duration-[100000s] ease-[ease]`;
   return (
     <div>
       <div
@@ -96,7 +106,7 @@ const BrochuresModal = () => {
               <div className="relative w-full max-w-md max-h-full">
                 <div className="relative bg-[#09090B] rounded-xl shadow p-5">
                   <div className="flex justify-between">
-                    <Image src={BrochureIcon} alt="Brochure Icon" height={40} width={40}/>
+                    <Image src={BrochureIcon} alt="Brochure Icon" height={40} width={40} />
                     <MdClose
                       size={25}
                       color="#85888E"
@@ -109,7 +119,7 @@ const BrochuresModal = () => {
                   </p>
                   <div className="modal-content text-center flex justify-center items-center gap-2 flex-col">
                     <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                      <div className="flex flex-col items-start mb-4 text-[#CECFD2]">
+                      <div className="flex flex-col items-start mb-3 text-[#CECFD2]">
                         <label htmlFor="name" className="font-semibold mb-2">
                           Name*
                         </label>
@@ -117,11 +127,11 @@ const BrochuresModal = () => {
                           type="text"
                           id="name"
                           placeholder="Enter your name"
-                          className="text-white outline-none p-2 w-full rounded-lg bg-[#191C1C]"
+                          className={inputStyle}
                           {...register('name', { required: true })}
                         />
                         {errors.name && (
-                          <p className="text-red-600 my-2 font-semibold">Name is required.</p>
+                          <p className="text-red-600 font-semibold">Name is required.</p>
                         )}
                       </div>
                       <div className="flex flex-col items-start text-[#CECFD2]">
@@ -133,11 +143,11 @@ const BrochuresModal = () => {
                           id="email"
                           name="email"
                           placeholder="Enter your email"
-                          className="text-white outline-none p-2 w-full rounded-lg bg-[#191C1C]"
+                          className={inputStyle}
                           {...register('email', { required: true })}
                         />
                         {errors.email && (
-                          <p className="text-red-600 my-2 font-semibold">Email is required.</p>
+                          <p className="text-red-600 font-semibold">Email is required.</p>
                         )}
                       </div>
                       <div className="justify-center gap-5 flex mt-5 w-full">
